@@ -23,7 +23,8 @@
         .banner-mask{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,rgba(0,75,153,0.7),rgba(0,88,184,0.5))}
         .banner-content{position:relative;z-index:2;text-align:center;color:#fff;padding:0 20px}
         .banner-title{font-size:42px;margin-bottom:20px;text-shadow:0 2px 8px rgba(0,0,0,0.3);background:linear-gradient(120deg,#fff,#cce8ff);-webkit-background-clip:text;color:transparent}
-        .banner-subtitle{font-size:20px;text-shadow:0 1px 5px rgba(0,0,0,0.2);max-width:800px;margin:0 auto}
+        /* 大标题下方文字改为纯白色 */
+        .banner-subtitle{font-size:20px;text-shadow:0 1px 5px rgba(0,0,0,0.2);max-width:800px;margin:0 auto;color:#fff !important}
         
         /* 内容板块 - 优化排版+保留所有文字 */
         .content-wrap{display:grid;grid-template-columns:1fr;gap:30px}
@@ -58,7 +59,8 @@
         
         /* 底部 - 官网风格 */
         footer{background:linear-gradient(180deg,#004b99,#003366);color:#fff;text-align:center;padding:40px;margin-top:50px;border-top:8px solid #0099cc}
-        .footer-text{font-size:15px;opacity:0.9;margin-top:10px}
+        /* 底部地址改为纯白色 */
+        .footer-text{font-size:15px;color:#fff !important;margin-top:10px}
 
         /* 手机端适配 - 保证文字完整显示 */
         @media (max-width:768px){
