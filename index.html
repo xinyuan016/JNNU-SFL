@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集宁师范学院外国语学院 智慧外语教育微专业简介</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:"微软雅黑","宋体",Arial,sans-serif}
+        body{background:#f0f5fc;color:#333;line-height:1.7}
+        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        
+        /* 导航栏 - 官网深蓝风格 */
+        header{background:linear-gradient(90deg,#004b99,#0058b8);color:#fff;padding:12px 0;position:sticky;top:0;box-shadow:0 3px 10px rgba(0,0,0,0.15);z-index:999}
+        .nav{display:flex;justify-content:space-between;align-items:center}
+        .logo-box{display:flex;align-items:center;gap:15px}
+        .school-logo{width:55px;height:55px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.2)}
+        .logo-text{font-size:24px;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,0.1)}
+        .nav-menu a{color:#fff;margin-left:22px;text-decoration:none;font-size:16px;transition:all 0.3s;padding:5px 8px;border-radius:4px}
+        .nav-menu a:hover{color:#004b99;background:#e6f0ff;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+        
+        /* 精美校园背景Banner */
+        .banner{height:400px;background:url('https://picsum.photos/id/180/1920/400') no-repeat center center;background-size:cover;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:40px}
+        .banner-mask{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,rgba(0,75,153,0.7),rgba(0,88,184,0.5))}
+        .banner-content{position:relative;z-index:2;text-align:center;color:#fff;padding:0 20px}
+        .banner-title{font-size:42px;margin-bottom:20px;text-shadow:0 2px 8px rgba(0,0,0,0.3);background:linear-gradient(120deg,#fff,#cce8ff);-webkit-background-clip:text;color:transparent}
+        .banner-subtitle{font-size:20px;text-shadow:0 1px 5px rgba(0,0,0,0.2);max-width:800px;margin:0 auto}
+        
+        /* 内容板块 - 优化排版+保留所有文字 */
+        .content-wrap{display:grid;grid-template-columns:1fr;gap:30px}
+        section{background:#fff;border-radius:12px;padding:45px;box-shadow:0 4px 15px rgba(0,0,0,0.05);transition:transform 0.3s, box-shadow 0.3s;border-top:5px solid #0058b8}
+        section:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.08)}
+        
+        /* 板块标题 - 清晰标注 */
+        .section-title{display:flex;align-items:center;gap:10px;color:#004b99;font-size:26px;margin-bottom:25px;padding-bottom:12px;border-bottom:2px solid #e8f2ff}
+        .title-icon{width:40px;height:40px;background:linear-gradient(135deg,#0058b8,#0099cc);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px}
+        
+        /* 二级标题/列表 - 优化可读性 */
+        h3{color:#0068d8;margin:20px 0 12px;font-size:19px;font-weight:600;display:flex;align-items:center;gap:8px}
+        h3::before{content:"";width:4px;height:18px;background:#00b388;border-radius:2px;display:inline-block}
+        .num-list{margin:15px 0;padding-left:20px}
+        .num-list li{margin:8px 0;list-style-type:decimal;font-size:16px;line-height:1.8}
+        .team-list{margin:10px 0;padding-left:15px}
+        .team-list li{margin:12px 0;list-style:none;position:relative;padding-left:20px}
+        .team-list li::before{content:"▪";color:#0058b8;position:absolute;left:0;top:0}
+        
+        p{margin-bottom:14px;font-size:16px;line-height:1.8;color:#444}
+        
+        /* 课程表格 - 精准还原所有数据 */
+        .table-box{overflow-x:auto;margin:25px 0;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+        table{width:100%;border-collapse:collapse;background:#fff}
+        td,th{border:1px solid #e0e8f0;padding:14px;text-align:center;font-size:15px}
+        th{background:linear-gradient(180deg,#004b99,#0058b8);color:#fff;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,0.1)}
+        tr:nth-child(even){background:#f8fbff}
+        tr:hover{background:#e8f4ff}
+        
+        /* 师资团队 - 保留完整信息 */
+        .teacher-card{background:#f8fbff;border-radius:8px;padding:20px;margin-bottom:15px;border:1px solid #e8f2ff}
+        
+        /* 底部 - 官网风格 */
+        footer{background:linear-gradient(180deg,#004b99,#003366);color:#fff;text-align:center;padding:40px;margin-top:50px;border-top:8px solid #0099cc}
+        .footer-text{font-size:15px;opacity:0.9;margin-top:10px}
+
+        /* 手机端适配 - 保证文字完整显示 */
+        @media (max-width:768px){
+            .school-logo{width:45px;height:45px}
+            .logo-text{font-size:20px}
+            .nav-menu a{margin-left:10px;font-size:14px}
+            .banner{height:280px}
+            .banner-title{font-size:28px}
+            .banner-subtitle{font-size:16px}
+            section{padding:30px}
+            td,th{padding:10px;font-size:14px}
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav">
+        <div class="logo-box">
+            <img src="https://p11-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/089e8e1393c24e7aad18fe456e34ad5d.jpg~tplv-a9rns2rl98-24:720:720.jpg?lk3s=8e244e95&rcl=202604121636586EC50E3CEEB1E9D46FFC&rrcfp=8a172a1a&x-expires=1776587818&x-signature=8odNFws0X8Sr2gZUTCaRgVyBNqM%3D" 
+                 alt="集宁师范学院校徽" class="school-logo">
+            <div class="logo-text">集宁师范学院外国语学院</div>
+        </div>
+        <div class="nav-menu">
+            <a href="#intro">微专业背景</a>
+            <a href="#target">微专业目标</a>
+            <a href="#feature">专业特色</a>
+            <a href="#course">开设课程</a>
+            <a href="#team">专业团队</a>
+        </div>
+    </div>
+</header>
+
+<!-- 校园Banner -->
+<div class="banner">
+    <div class="banner-mask"></div>
+    <div class="banner-content">
+        <h1 class="banner-title">“智慧外语教育”微专业简介</h1>
+        <p class="banner-subtitle">AI赋能 · 外语+教育+技术 培养新文科复合型人才 | 集宁师范学院外国语学院</p>
+    </div>
+</div>
+
+<div class="container content-wrap">
+    <!-- 一、微专业背景 -->
+    <section id="intro">
+        <h2 class="section-title">
+            <span class="title-icon">📖</span>
+            一、微专业背景
+        </h2>
+        <p>“智慧外语教育”微专业，依托外国语学院自治区一流本科专业（英语）建设基础，联合内蒙古云图教育咨询有限公司核心中小学英语教师培训项目，聚焦智能技术与外语教学深度融合，创新采用“AI 技术赋能+线上陪伴教育”科教融合培养模式。</p>
+        <p>本专业深化产教融合、科教融汇，精准对接线上陪伴教育行业新业态与人才新需求，贯通专业实践、校企合作、职业能力训练与就业竞争力提升，构建外语教学+智慧教育技术+新媒体教育跨学科课程体系，深度融入人工智能前沿技术。面向对外语教育、数字教育兴趣浓厚、学有余力的学生，培养外语扎实、技术精通、理念先进，能胜任中英文教学组织与管理、具备优秀跨文化适应力的新文科复合型人才。</p>
+    </section>
+
+    <!-- 二、微专业目标 -->
+    <section id="target">
+        <h2 class="section-title">
+            <span class="title-icon">🎯</span>
+            二、微专业目标
+        </h2>
+        <ol class="num-list">
+            <li>以智慧技术赋能传统外语教育，推动外语教学模式创新升级。</li>
+            <li>培养兼具扎实外语功底、系统教育理论与智慧教育技术能力，具备创新思维、实践能力与团队协作素养的复合型人才。</li>
+            <li>培育适应全球化教育需求，可在学校、教育机构、科技企业从事智慧外语教学、教育产品研发等工作的应用型专业人才。</li>
+            <li>探索“外语+教育+技术”交叉融合培养路径，为智慧教育行业输送创新型骨干力量。</li>
+        </ol>
+    </section>
+
+    <!-- 三、专业特色 -->
+    <section id="feature">
+        <h2 class="section-title">
+            <span class="title-icon">✨</span>
+            三、专业特色
+        </h2>
+        <ol class="num-list">
+            <li>跨学科融合：打破外语、教育、计算机学科壁垒，构建互补互通的知识体系。</li>
+            <li>技术前沿化：深度结合人工智能、大数据，聚焦智能教学工具、在线课程设计，掌握行业最新技术应用。</li>
+            <li>理实一体化：以教学实习、项目研发强化实操能力，实现理论教学与岗位实践无缝衔接。</li>
+            <li>方向个性化：开设智慧外语教师教育、新媒体教育应用两大选修方向，配套导师制精准指导，适配多元职业规划。</li>
+            <li>校企深度协同：联动内蒙古云图教育咨询有限公司，导入行业资源与真实场景，强化岗位对接与就业适配。</li>
+        </ol>
+    </section>
+
+    <!-- 四、开设课程 -->
+    <section id="course">
+        <h2 class="section-title">
+            <span class="title-icon">📚</span>
+            四、开设课程
+        </h2>
+        <p>构建“智慧技术+外语教学+新媒体应用+综合实践”四位一体课程体系，聚焦人工智能、大数据、新媒体与外语教学深度融合，分学期递进培养：</p>
+        <div style="margin:15px 0;padding:10px;background:#f0f8ff;border-radius:6px">
+            <p style="margin:5px 0">🔹 第 1 学期：智慧技术基础+外语教学核心</p>
+            <p style="margin:5px 0">🔹 第 2 学期：智能教学工具+教学评价与测量</p>
+            <p style="margin:5px 0">🔹 第 3 学期：新媒体外语教学+在线课程设计</p>
+            <p style="margin:5px 0">🔹 第 4 学期：智慧外语综合实践与项目研发</p>
+        </div>
+
+        <div class="table-box">
+            <table>
+                <tr>
+                    <th>课程名称</th>
+                    <th>学时</th>
+                    <th>学分</th>
+                    <th>在线视频（分钟数）</th>
+                    <th>开设学期</th>
+                </tr>
+                <tr><td>智慧教育技术基础</td><td>32</td><td>2</td><td>420</td><td>1</td></tr>
+                <tr><td>外语教学理论与方法</td><td>32</td><td>2</td><td>400</td><td>1</td></tr>
+                <tr><td>AI外语教学应用</td><td>24</td><td>1.5</td><td>300</td><td>2</td></tr>
+                <tr><td>教育评价与测量</td><td>24</td><td>1.5</td><td>280</td><td>2</td></tr>
+                <tr><td>新媒体外语教学工具与应用</td><td>24</td><td>1.5</td><td>280</td><td>3</td></tr>
+                <tr><td>在线课程设计与开发</td><td>32</td><td>2</td><td>280</td><td>3</td></tr>
+                <tr><td>智慧外语教学实践与研究</td><td>32</td><td>2</td><td>360</td><td>4</td></tr>
+                <tr><td>智慧教育项目实战</td><td>24</td><td>1.5</td><td>320</td><td>4</td></tr>
+            </table>
+        </div>
+
+        <p style="margin-top:20px"><strong>课程支撑两大方向：</strong>智慧外语教师教育；在线外语课程与新媒体教育</p>
+    </section>
+
+    <!-- 五、专业团队 -->
+    <section id="team">
+        <h2 class="section-title">
+            <span class="title-icon">👨‍🏫</span>
+            五、专业团队
+        </h2>
+
+        <h3>（一）项目顾问</h3>
+        <div class="teacher-card">
+            <p>张兴，内蒙古云图教育咨询有限公司总经理，内蒙古自治区“草原英才”，国家级教学成果二等奖获得者，自治区教学成果一等奖获得者，自治区民族科研二等奖获得者，内蒙古自治区青年企业家协会常务理事，呼和浩特市青年企业家协会副秘书长，TESOL中国专家委员会内蒙区域秘书长，乌兰察布职业学院客座教授，内蒙古商贸职业学院产业导师，内蒙古农业大学职业技术学院创新创业导师，内蒙古大学创新创业导师。</p>
+        </div>
+
+        <h3>（二）微专业负责人</h3>
+        <div class="teacher-card">
+            <p>鲁俊彪，博士，教授，集宁师范学院外国语学院院长，研究方向为外国语言文学和智慧教学，长期从事外语教学与智慧教育技术融合研究，主持微专业整体建设规划，推动课程体系优化与师资团队建设，具备丰富的跨学科教学管理经验。</p>
+        </div>
+
+        <h3>（三）教学团队</h3>
+        <div class="teacher-card">
+            <p>团队汇聚外语、教育技术、计算机等领域骨干教师，跨学院协作，兼具理论深度与实践经验。</p>
+            <ul class="team-list">
+                <li>刘至美，硕士，副教授，《外语教学理论与方法》课程负责人。</li>
+                <li>张建芳，硕士，副教授，《教育评价与测量》课程负责人。</li>
+                <li>马永强，硕士，副教授，《智慧教育技术基础》《AI 外语教学应用》课程负责人。</li>
+                <li>岳菲菲，硕士，副教授，《新媒体外语教学工具与应用》课程负责人。</li>
+                <li>李一、孙伟，硕士，副教授，联合承担《在线课程设计与开发》。</li>
+                <li>校企导师共同承担《智慧教育项目实战》《智慧外语教学实践与研究》。</li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="container">
+        <h3 style="color:#fff;border:none;margin:0;font-size:18px">集宁师范学院外国语学院</h3>
+        <p class="footer-text">&copy; 2026 智慧外语教育微专业 招生专题 | 地址：内蒙古乌兰察布市集宁区工农大街59号</p>
+    </div>
+</footer>
+
+</body>
+</html>
