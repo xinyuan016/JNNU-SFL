@@ -294,16 +294,19 @@
             position:relative;
             padding-left: 24px;
             font-size: 16px;
+            line-height: 1.5; /* 统一行高保证对齐 */
         }
         
+        /* 核心修正：调整蓝点的垂直定位和字体大小，使其与文字基线对齐 */
         .team-list li::before{
             content:"▪";
             color: var(--accent-color);
             position:absolute;
             left: 0;
-            top: 0;
-            font-size: 24px;
+            top: 2px; /* 关键：从0改为2px，让蓝点垂直居中 */
+            font-size: 18px; /* 关键：从24px改为18px，匹配文字大小 */
             font-weight: 700;
+            line-height: 1; /* 重置行高避免偏移 */
         }
         
         /* 师资卡片 */
