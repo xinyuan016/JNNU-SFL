@@ -3,75 +3,489 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>集宁师范学院外国语学院 智慧外语教育微专业简介</title>
+    <title>集宁师范学院外国语学院 智慧外语教育微专业招生简介</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:"微软雅黑","宋体",Arial,sans-serif}
-        body{background:#f0f5fc;color:#333;line-height:1.7}
-        .container{max-width:1200px;margin:0 auto;padding:0 20px}
+        /* 全局样式重置与基础配置 */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:"Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+        }
         
-        /* 导航栏 - 官网深蓝风格 */
-        header{background:linear-gradient(90deg,#004b99,#0058b8);color:#fff;padding:12px 0;position:sticky;top:0;box-shadow:0 3px 10px rgba(0,0,0,0.15);z-index:999}
-        .nav{display:flex;justify-content:space-between;align-items:center}
-        .logo-box{display:flex;align-items:center;gap:15px}
-        .school-logo{width:55px;height:55px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,0.2)}
-        .logo-text{font-size:24px;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,0.1)}
-        .nav-menu a{color:#fff;margin-left:22px;text-decoration:none;font-size:16px;transition:all 0.3s;padding:5px 8px;border-radius:4px}
-        .nav-menu a:hover{color:#004b99;background:#e6f0ff;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+        :root {
+            /* 高端配色体系 */
+            --primary-color: #004b99;
+            --secondary-color: #0058b8;
+            --accent-color: #0099cc;
+            --light-accent: #e6f7ff;
+            --text-dark: #333;
+            --text-gray: #666;
+            --text-light: #fff;
+            --bg-primary: #f0f5fc;
+            --bg-card: #ffffff;
+            --shadow-light: 0 4px 20px rgba(0, 75, 153, 0.08);
+            --shadow-hover: 0 8px 30px rgba(0, 75, 153, 0.15);
+            --border-radius: 16px;
+            --transition-base: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
         
-        /* 精美校园背景Banner */
-        .banner{height:400px;background:url('https://picsum.photos/id/180/1920/400') no-repeat center center;background-size:cover;position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:40px}
-        .banner-mask{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,rgba(0,75,153,0.7),rgba(0,88,184,0.5))}
-        .banner-content{position:relative;z-index:2;text-align:center;color:#fff;padding:0 20px}
-        .banner-title{font-size:42px;margin-bottom:20px;text-shadow:0 2px 8px rgba(0,0,0,0.3);background:linear-gradient(120deg,#fff,#cce8ff);-webkit-background-clip:text;color:transparent}
-        /* 大标题下方文字改为纯白色 */
-        .banner-subtitle{font-size:20px;text-shadow:0 1px 5px rgba(0,0,0,0.2);max-width:800px;margin:0 auto;color:#fff !important}
+        body{
+            background: linear-gradient(180deg, var(--bg-primary) 0%, #f8fbff 100%);
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding-bottom: 60px;
+            scroll-behavior: smooth;
+        }
         
-        /* 内容板块 - 优化排版+保留所有文字 */
-        .content-wrap{display:grid;grid-template-columns:1fr;gap:30px}
-        section{background:#fff;border-radius:12px;padding:45px;box-shadow:0 4px 15px rgba(0,0,0,0.05);transition:transform 0.3s, box-shadow 0.3s;border-top:5px solid #0058b8}
-        section:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(0,0,0,0.08)}
+        /* 容器样式 */
+        .container{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
         
-        /* 板块标题 - 清晰标注 */
-        .section-title{display:flex;align-items:center;gap:10px;color:#004b99;font-size:26px;margin-bottom:25px;padding-bottom:12px;border-bottom:2px solid #e8f2ff}
-        .title-icon{width:40px;height:40px;background:linear-gradient(135deg,#0058b8,#0099cc);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px}
+        /* 导航栏 - 高端玻璃质感 */
+        header{
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 20px rgba(0, 75, 153, 0.12);
+            backdrop-filter: blur(10px);
+        }
         
-        /* 二级标题/列表 - 优化可读性 */
-        h3{color:#0068d8;margin:20px 0 12px;font-size:19px;font-weight:600;display:flex;align-items:center;gap:8px}
-        h3::before{content:"";width:4px;height:18px;background:#00b388;border-radius:2px;display:inline-block}
-        .num-list{margin:15px 0;padding-left:20px}
-        .num-list li{margin:8px 0;list-style-type:decimal;font-size:16px;line-height:1.8}
-        .team-list{margin:10px 0;padding-left:15px}
-        .team-list li{margin:12px 0;list-style:none;position:relative;padding-left:20px}
-        .team-list li::before{content:"▪";color:#0058b8;position:absolute;left:0;top:0}
+        .nav{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
         
-        p{margin-bottom:14px;font-size:16px;line-height:1.8;color:#444}
+        .logo-box{
+            display:flex;
+            align-items:center;
+            gap: 16px;
+        }
         
-        /* 课程表格 - 精准还原所有数据 */
-        .table-box{overflow-x:auto;margin:25px 0;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
-        table{width:100%;border-collapse:collapse;background:#fff}
-        td,th{border:1px solid #e0e8f0;padding:14px;text-align:center;font-size:15px}
-        th{background:linear-gradient(180deg,#004b99,#0058b8);color:#fff;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,0.1)}
-        tr:nth-child(even){background:#f8fbff}
-        tr:hover{background:#e8f4ff}
+        .school-logo{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit:cover;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: var(--transition-base);
+        }
         
-        /* 师资团队 - 保留完整信息 */
-        .teacher-card{background:#f8fbff;border-radius:8px;padding:20px;margin-bottom:15px;border:1px solid #e8f2ff}
+        .school-logo:hover {
+            transform: scale(1.05);
+        }
         
-        /* 底部 - 官网风格 */
-        footer{background:linear-gradient(180deg,#004b99,#003366);color:#fff;text-align:center;padding:40px;margin-top:50px;border-top:8px solid #0099cc}
-        /* 底部地址改为纯白色 */
-        .footer-text{font-size:15px;color:#fff !important;margin-top:10px}
-
-        /* 手机端适配 - 保证文字完整显示 */
+        .logo-text{
+            font-size: 26px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.5px;
+            background: linear-gradient(90deg, #ffffff 0%, #e6f7ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav-menu a{
+            color: var(--text-light);
+            margin-left: 28px;
+            text-decoration:none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: var(--transition-base);
+            padding: 8px 12px;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition-base);
+            transform: translateX(-50%);
+        }
+        
+        .nav-menu a:hover{
+            color: var(--light-accent);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-menu a:hover::after {
+            width: 80%;
+        }
+        
+        /* Banner区域 - 更换为风景图背景 */
+        .banner{
+            height: 500px;
+            /* 替换为高质量风景图链接 */
+            background: url('https://picsum.photos/id/10/1920/1080') center/cover no-repeat;
+            position:relative;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin-bottom: 60px;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 75, 153, 0.15);
+            overflow: hidden;
+        }
+        
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 75, 153, 0.4); /* 仅保留轻微遮罩保证文字可读性 */
+            z-index: 1;
+        }
+        
+        .banner-content{
+            position:relative;
+            z-index: 2;
+            text-align:center;
+            color: var(--text-light);
+            padding: 0 20px;
+            animation: fadeUp 1s ease-out;
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .banner-title{
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .banner-subtitle{
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+            line-height: 1.8;
+            color: #ffffff; /* 强制设置为纯白色 */
+            font-weight: 500; /* 轻微加粗提升辨识度 */
+        }
+        
+        /* 内容板块容器 */
+        .content-wrap{
+            display:grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        /* 内容板块 - 高端卡片样式 */
+        section{
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 48px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-base);
+            border: 1px solid rgba(0, 75, 153, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
+        }
+        
+        section:hover{
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        /* 板块标题 */
+        .section-title{
+            display:flex;
+            align-items:center;
+            gap: 16px;
+            color: var(--primary-color);
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--light-accent);
+        }
+        
+        .title-icon{
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            border-radius: 12px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color: var(--text-light);
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0, 75, 153, 0.15);
+        }
+        
+        /* 文本样式 */
+        p{
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+        
+        p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* 列表样式 */
+        .num-list{
+            margin: 24px 0;
+            padding-left: 30px;
+        }
+        
+        .num-list li{
+            margin: 16px 0;
+            list-style-type: decimal;
+            font-size: 17px;
+            line-height: 1.8;
+            position: relative;
+            padding-left: 12px;
+        }
+        
+        .num-list li::marker {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .team-list{
+            margin: 24px 0;
+            padding-left: 30px;
+        }
+        
+        .team-list li{
+            margin: 12px 0;
+            list-style:none;
+            position:relative;
+            padding-left: 24px;
+            font-size: 16px;
+        }
+        
+        .team-list li::before{
+            content:"▪";
+            color: var(--accent-color);
+            position:absolute;
+            left: 0;
+            top: 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        /* 师资卡片 */
+        .teacher-card{
+            background: var(--light-accent);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(0, 153, 204, 0.1);
+            transition: var(--transition-base);
+        }
+        
+        .teacher-card:hover {
+            background: rgba(0, 153, 204, 0.05);
+            transform: translateX(8px);
+        }
+        
+        .teacher-card:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* 表格样式 - 高端化 */
+        .table-box{
+            overflow-x:auto;
+            margin: 32px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 75, 153, 0.08);
+        }
+        
+        table{
+            width:100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        td,th{
+            padding: 18px 24px;
+            text-align:center;
+            font-size: 16px;
+            border-bottom: 1px solid rgba(0, 75, 153, 0.05);
+        }
+        
+        th{
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        tr:nth-child(even){
+            background: rgba(0, 75, 153, 0.02);
+        }
+        
+        tr:hover{
+            background: rgba(0, 153, 204, 0.05);
+            transition: var(--transition-base);
+        }
+        
+        /* 报名信息板块 */
+        .apply-section {
+            text-align: center;
+            padding: 16px 0;
+        }
+        
+        .apply-info {
+            margin: 32px 0;
+            font-size: 19px;
+            line-height: 2.2;
+        }
+        
+        .apply-info span {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .qrcode-box {
+            margin: 32px auto;
+            max-width: 320px;
+            padding: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 75, 153, 0.1);
+            border: 1px solid rgba(0, 153, 204, 0.1);
+            transition: var(--transition-base);
+        }
+        
+        .qrcode-box:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 32px rgba(0, 75, 153, 0.15);
+        }
+        
+        .qrcode-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .qrcode-tip {
+            margin-top: 16px;
+            font-size: 16px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+        
+        /* 底部样式 */
+        footer{
+            background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-light);
+            text-align:center;
+            padding: 40px 0;
+            margin-top: 80px;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            box-shadow: 0 -4px 20px rgba(0, 75, 153, 0.1);
+        }
+        
+        .footer-text{
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+        
+        /* 响应式设计 */
         @media (max-width:768px){
-            .school-logo{width:45px;height:45px}
-            .logo-text{font-size:20px}
-            .nav-menu a{margin-left:10px;font-size:14px}
-            .banner{height:280px}
-            .banner-title{font-size:28px}
-            .banner-subtitle{font-size:16px}
-            section{padding:30px}
-            td,th{padding:10px;font-size:14px}
+            .logo-text {
+                font-size: 22px;
+            }
+            
+            .nav-menu a {
+                margin-left: 16px;
+                font-size: 14px;
+                padding: 6px 8px;
+            }
+            
+            .banner {
+                height: 380px;
+            }
+            
+            .banner-title {
+                font-size: 32px;
+            }
+            
+            .banner-subtitle {
+                font-size: 18px;
+            }
+            
+            section {
+                padding: 32px 24px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .title-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+            
+            td, th {
+                padding: 12px 16px;
+                font-size: 14px;
+            }
+            
+            .apply-info {
+                font-size: 17px;
+            }
+            
+            .qrcode-box {
+                max-width: 280px;
+                padding: 20px;
+            }
+        }
+        
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -90,15 +504,15 @@
             <a href="#feature">专业特色</a>
             <a href="#course">开设课程</a>
             <a href="#team">专业团队</a>
+            <a href="#apply">报名信息</a>
         </div>
     </div>
 </header>
 
 <!-- 校园Banner -->
 <div class="banner">
-    <div class="banner-mask"></div>
     <div class="banner-content">
-        <h1 class="banner-title">“智慧外语教育”微专业简介</h1>
+        <h1 class="banner-title">“智慧外语教育”微专业招生简介</h1>
         <p class="banner-subtitle">AI赋能 · 外语+教育+技术 培养新文科复合型人才 | 集宁师范学院外国语学院</p>
     </div>
 </div>
@@ -150,11 +564,11 @@
             四、开设课程
         </h2>
         <p>构建“智慧技术+外语教学+新媒体应用+综合实践”四位一体课程体系，聚焦人工智能、大数据、新媒体与外语教学深度融合，分学期递进培养：</p>
-        <div style="margin:15px 0;padding:10px;background:#f0f8ff;border-radius:6px">
-            <p style="margin:5px 0">🔹 第 1 学期：智慧技术基础+外语教学核心</p>
-            <p style="margin:5px 0">🔹 第 2 学期：智能教学工具+教学评价与测量</p>
-            <p style="margin:5px 0">🔹 第 3 学期：新媒体外语教学+在线课程设计</p>
-            <p style="margin:5px 0">🔹 第 4 学期：智慧外语综合实践与项目研发</p>
+        <div style="margin:15px 0;padding:16px 24px;background:var(--light-accent);border-radius:12px;border:1px solid rgba(0,153,204,0.1);">
+            <p style="margin:8px 0;font-size:17px">🔹 第 1 学期：智慧技术基础+外语教学核心</p>
+            <p style="margin:8px 0;font-size:17px">🔹 第 2 学期：智能教学工具+教学评价与测量</p>
+            <p style="margin:8px 0;font-size:17px">🔹 第 3 学期：新媒体外语教学+在线课程设计</p>
+            <p style="margin:8px 0;font-size:17px">🔹 第 4 学期：智慧外语综合实践与项目研发</p>
         </div>
 
         <div class="table-box">
@@ -177,7 +591,7 @@
             </table>
         </div>
 
-        <p style="margin-top:20px"><strong>课程支撑两大方向：</strong>智慧外语教师教育；在线外语课程与新媒体教育</p>
+        <p style="font-weight:500"><strong>课程支撑两大方向：</strong>智慧外语教师教育；在线外语课程与新媒体教育</p>
     </section>
 
     <!-- 五、专业团队 -->
@@ -187,17 +601,17 @@
             五、专业团队
         </h2>
 
-        <h3>（一）项目顾问</h3>
+        <h3 style="color:var(--primary-color);font-size:22px;margin-bottom:16px;">（一）项目顾问</h3>
         <div class="teacher-card">
             <p>张兴，内蒙古云图教育咨询有限公司总经理，内蒙古自治区“草原英才”，国家级教学成果二等奖获得者，自治区教学成果一等奖获得者，自治区民族科研二等奖获得者，内蒙古自治区青年企业家协会常务理事，呼和浩特市青年企业家协会副秘书长，TESOL中国专家委员会内蒙区域秘书长，乌兰察布职业学院客座教授，内蒙古商贸职业学院产业导师，内蒙古农业大学职业技术学院创新创业导师，内蒙古大学创新创业导师。</p>
         </div>
 
-        <h3>（二）微专业负责人</h3>
+        <h3 style="color:var(--primary-color);font-size:22px;margin-bottom:16px;margin-top:24px;">（二）微专业负责人</h3>
         <div class="teacher-card">
             <p>鲁俊彪，博士，教授，集宁师范学院外国语学院院长，研究方向为外国语言文学和智慧教学，长期从事外语教学与智慧教育技术融合研究，主持微专业整体建设规划，推动课程体系优化与师资团队建设，具备丰富的跨学科教学管理经验。</p>
         </div>
 
-        <h3>（三）教学团队</h3>
+        <h3 style="color:var(--primary-color);font-size:22px;margin-bottom:16px;margin-top:24px;">（三）教学团队</h3>
         <div class="teacher-card">
             <p>团队汇聚外语、教育技术、计算机等领域骨干教师，跨学院协作，兼具理论深度与实践经验。</p>
             <ul class="team-list">
@@ -210,11 +624,31 @@
             </ul>
         </div>
     </section>
+
+    <!-- 新增：六、报名信息 -->
+    <section id="apply">
+        <h2 class="section-title">
+            <span class="title-icon">📝</span>
+            六、报名信息
+        </h2>
+        <div class="apply-section">
+            <div class="apply-info">
+                <p><span>报名时间：</span>即日起</p>
+                <p><span>咨询联系人：</span>李老师</p>
+                <p><span>联系方式：</span>13088581084（手机号与微信号同号）</p>
+            </div>
+            <div class="qrcode-box">
+                <img src="https://p3-flow-imagex-download-sign.byteimg.com/tos-cn-i-a9rns2rl98/b5a01b4e60c043de81a2c233126f7466.png~tplv-a9rns2rl98-24:720:720.png?lk3s=8e244e95&rcl=202604161541047CB4D514F4CCA51CF3AB&rrcfp=8a172a1a&x-expires=1776930065&x-signature=ouGPawBllmuB6IZ6DbxGf%2B4n7qY%3D" 
+                     alt="智慧外语教育微专业报名二维码" class="qrcode-img">
+                <p class="qrcode-tip">微信扫码或长按识别，填写报名信息</p>
+            </div>
+        </div>
+    </section>
 </div>
 
 <footer>
     <div class="container">
-        <h3 style="color:#fff;border:none;margin:0;font-size:18px">集宁师范学院外国语学院</h3>
+        <h3 style="color:#fff;border:none;margin:0 0 16px 0;font-size:20px;font-weight:600;">集宁师范学院外国语学院</h3>
         <p class="footer-text">&copy; 2026 智慧外语教育微专业 招生专题 | 地址：内蒙古乌兰察布市集宁区工农大街59号</p>
     </div>
 </footer>
